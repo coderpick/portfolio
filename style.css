@@ -1,0 +1,465 @@
+/*!
+ * Coderpick-Portfolio (http://coderpick.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+ /*
+font-family: 'Roboto Condensed', sans-serif;
+ font-family: 'Poppins', sans-serif;
+ */
+
+body {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; 
+    /*font-family: 'Poppins', sans-serif;*/
+}
+h1,h2,h3,h4,h5,h6{
+   /* margin: 0;
+    padding: 0;*/
+    font-family: 'Montserrat', sans-serif;
+}
+a:hover{
+   text-decoration: none;
+}
+
+.navbar-default {
+   background-color: transparent; 
+   border-color:transparent;
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+        background: rgba(7, 37, 57, 0.92);
+    } 
+
+}
+
+/* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
+The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children 
+of those sections to manage the look and feel of the site. */
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 20px;
+    line-height: 20px;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #d1d1d1;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+span.logo {
+    color: #fff;
+    font-size: 20px; 
+}
+span.logo:before {
+    font-family: "FontAwesome";
+    content: "\f104";}
+
+span.logo:after {
+    font-family: "FontAwesome";
+    content: "\f105";
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #022d4a;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+.intro-section {
+    background: url(img/headerbg2.jpeg)no-repeat center center / cover;   
+    position: relative;
+    z-index: 1;
+}
+.intro-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(3, 41, 60, 0.90);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.hero-text {
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;    
+}
+.hero-text h1 {
+    font-size: 60px;
+    letter-spacing: 10px;
+    margin-bottom: 25px;
+    text-transform: uppercase
+}
+.hero-text h4 {
+    margin-top: 15px;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+}
+.hero-text img {
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+}
+.hero-text strong {
+    color: #03A9F4;
+    background:#022D4A; 
+    padding: 0 2px;
+    display:  inline-block;
+}
+.scroll-next {
+    bottom: 20px;
+    color: #fff;
+    display: inline-block;
+    font-size: 45px;
+    color: #fff;
+    height: 40px;
+    left: 50%;
+    line-height: 42px;
+    margin-left: -20px;    
+    position: absolute;
+    text-align: center;
+    width: 40px;
+    -webkit-animation: scroll_next 1s linear 0s infinite normal;
+    animation: scroll_next 1s linear 0s infinite normal;
+}
+.scroll-next:hover {
+    color: #fff;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.scroll-next:focus {
+    color: #fff;
+}
+@-webkit-keyframes scroll_next {
+    0% {
+        bottom: 40px;
+    }
+    100% {
+        bottom: 20px;
+    }
+}
+@keyframes scroll_next {
+    0% {
+        bottom: 40px;
+    }
+    100% {
+        bottom: 20px;
+    }
+}
+.section-padding{
+    height: 100%;
+    padding: 60px 0;    
+}
+.section-title{
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 60px;
+}
+.section-title span{
+    background: #022D4A;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 10px;
+}
+.about-section {  
+    background: #eee;
+}
+.aobut-content p {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-align: justify;
+    word-spacing: -1px;
+}
+a.about-btn {
+    border: 1px solid #222;
+    color: #222;
+    display: inline-block;
+    letter-spacing: 3px;
+    padding: 10px 20px;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 1;   
+    transition: .4s;
+    margin-right: 30px; 
+}
+a.about-btn:hover {
+    background-color: #022D4A;
+    color: #fff;   
+}
+
+/*************************
+Skill Progress bar
+*************************/
+
+.barfiller {
+  width: 100%;
+  height: 12px;
+  background: #fcfcfc;
+  border: 1px solid #ccc;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,.5);
+  -moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,.5);
+}
+
+.barfiller .fill {
+  display: block;
+  position: relative;
+  width: 0px;
+  height: 100%;
+  background: #333;
+  z-index: 1;
+}
+
+.barfiller .tipWrap { display: none; }
+
+.barfiller .tip {
+  margin-top: -30px;
+  padding: 2px 4px;
+  font-size: 11px;
+  color: #fff;
+  left: 0px;
+  position: absolute;
+  z-index: 2;
+  background: #022D4A;
+}
+
+.barfiller .tip:after {
+  border: solid;
+  border-color: #022D4A transparent;
+  border-width: 6px 6px 0 6px;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 9px;
+  top: 100%;
+  z-index: 9
+}
+
+/**********************
+about bottom section
+**********************/
+.about-bottom {  
+    margin-top: 30px;   
+}
+.about-bottom h3 {
+  font-size: 22px;
+  text-transform: uppercase;
+  padding: 12px 15px;
+  margin: 0;
+  color: #fff;
+}
+.job-experiance,.education{
+  border: 1px solid #d1d1d1;
+  background: #054F81;   
+}
+.item-list{
+    background: #fff;
+}
+.item{
+  padding: 20px;
+}
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+    max-width: 160px;
+    -webkit-transform-style: preserve-3d;
+    border-radius: 50%;
+}
+.owl-carousel .owl-controls .owl-nav div {
+  background: #054F81 none repeat scroll 0 0;
+  color: #fff;
+  display: inline-block;
+  font-size: 22px;
+  font-weight:600;
+  height: 36px;
+  line-height: 36px;
+  margin-right: 5px;
+  text-align: center;
+  width: 36px;
+  border-radius: 50%;
+  transition: .3s;
+  opacity: .5
+}
+.owl-carousel .owl-controls .owl-nav div:hover {
+    background: #054F81;
+    color: #fff;
+    opacity: 1;
+}
+.owl-carousel .owl-controls .owl-nav {
+  position: absolute;
+  bottom: 6px;
+  right: 4px;
+}
+
+/*************************
+ Service Section
+*************************/
+.services-section {    
+    background: #f9f9f9;
+}
+.service-style-1 {
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
+}
+.service-style-1 .row,
+.service-style-3 .row {
+    margin: 0;
+}
+.service-style-1 .col-md-4,
+.service-style-3 .col-md-6 {
+    padding: 0;
+}
+.single-service-item p:last-child {
+    margin-bottom: 0;
+}
+.service-style-1 .single-service-item {
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+.single-service-item i {
+    font-size: 70px;
+}
+.single-service-item h4 {
+    text-transform: uppercase;
+    margin: 16px 0;
+    letter-spacing: 1px;
+}
+.service-style-1 .single-service-item:hover {
+    box-shadow: 0px 20px 50px #ddd;
+    background: #054F81;
+    color: #fff;
+}
+
+.single-service-item {
+    height: 280px;
+    padding: 20px 20px 0;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.service-style-2 .single-service-item {
+    border: 1px solid #eee;
+    margin-bottom: 30px;
+}
+.service-style-2 .col-md-4:nth-child(4) .single-service-item,
+.service-style-2 .col-md-4:nth-child(5) .single-service-item,
+.service-style-2 .col-md-4:nth-child(6) .single-service-item {
+    margin-bottom: 0;
+}
+.service-style-2 .single-service-item:hover {
+    background-color: #454545;
+    border-color: #454545;
+    color: #fff;
+}
+.service-bg {
+    background-size: cover;
+    height:280px;
+    background-position: center;
+    background-color: #ddd;
+    position: relative;
+    z-index: 1;
+}
+.service-style-3 .single-service-item {
+    background-color: #ccc;
+    padding: 20px 15px 0px;
+    color: #000;
+}
+.service-bg:before {
+    background-color: #ccc;
+    content: "";
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    right: -20px;
+    top: 50%;
+    margin-top: -20px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+.service-bg.right:before {
+    right: auto;
+    left: -20px;
+}
+.service-style-3 .col-md-6:hover .service-bg:before {
+    background-color: #333;
+}
+.service-style-3 .col-md-6:hover .single-service-item {
+    background-color: #333;
+    color: #fff;
+}
+.service-style-3 .col-md-6:hover .service-bg:after {
+    opacity: 0.2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+}
+/*************************
+ Portfolio section
+*************************/
+.portfolio-section{
+    background: #EEEEEE;
+}
+.filter-menu{
+  margin-bottom:30px;
+}
+.filter-menu button {
+  display: inline-block;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  padding: 10px 12px;
+  margin-right: 9px;
+  text-transform: uppercase;
+  transition: all 0.5s ease 0s;
+}
+.filter-menu button.active{
+  background: #054F81;
+  color: #fff;
+}
+.filter-menu button:last-child{
+   margin-right:0;
+}
+.filter-menu button:hover{
+  background: #054F81;
+  border: 1px solid #054F82;
+  color: #fff;
+}
+
+.single-item{
+  width: 350px;
+  display: inline-block; 
+  margin:0;
+  padding: 0;
+}
+.single-item img{
+  width: 350px;
+  height: 250px;
+}
+
+.contact-section {
+    background:#054F81;
+    color: #fff;
+}
